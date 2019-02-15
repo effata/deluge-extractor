@@ -98,7 +98,7 @@ else:
     # ".bz2": ["bzip2", "-d --keep"],
 
     EXTRACT_COMMANDS = {
-        ".rar": ["unrar", "x -o+ -y"],
+        ".rar": ["unrar", "x -o- -y"],
         ".tar": ["tar", "-xf"],
         ".zip": ["unzip", ""],
         ".tar.gz": ["tar", "-xzf"], ".tgz": ["tar", "-xzf"],
