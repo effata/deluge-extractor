@@ -161,7 +161,9 @@ class Core(CorePluginBase):
 
             if self.config["in_place_extraction"]:
                 # Override destination to the location of the file to be extracted.
-                dest = os.path.split(f["path"])[0]
+                name = tid_status["name"]
+                save_path = tid_status["save_path"]
+                dest = os.path.join(save_path, os.path.split(f["path"])[0])
 
             # Create the destination folder if it doesn't exist
             if not os.path.exists(dest):
