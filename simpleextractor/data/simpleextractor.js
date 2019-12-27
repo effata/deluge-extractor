@@ -2,7 +2,7 @@
  * simpleextractor.js
  *
  * Copyright (c) Damien Churchill 2010 <damoxc@gmail.com>
- * Copyright (C) 2015 Chris Yereaztian <chris.yereaztian@gmail.com>
+  * Copyright (C) Digitalhigh 2019 <donate.to.digitalhigh@gmail.com>
  *
  * This file is part of Deluge and is licensed under GNU General Public License 3.0, or later, with
  * the additional special exception to link portions of this program with the OpenSSL library.
@@ -66,6 +66,23 @@ Deluge.ux.preferences.SimpleExtractorPage = Ext.extend(Ext.Panel, {
             boxLabel: _('Extract torrent in-place')
         });
 
+        fieldset2 = this.form.add({
+            xtype: 'fieldset',
+            border: false,
+            title: '',
+            autoHeight: true,
+            labelAlign: 'top',
+            labelWidth: 80,
+            defaultType: 'textfield'
+        });
+
+        this.extract_labels = fieldset.add({
+            fieldLabel: _('Label Filter:'),
+            labelSeparator : '',
+            name: 'extract_labels',
+            width: '97%'
+        });
+
         this.on('show', this.updateConfig, this);
     },
 
@@ -76,6 +93,7 @@ Deluge.ux.preferences.SimpleExtractorPage = Ext.extend(Ext.Panel, {
         config['extract_path'] = this.extract_path.getValue();
         config['use_name_folder'] = this.use_name_folder.getValue();
         config['in_place_extraction'] = this.in_place_extraction.getValue();
+        config['extract_labels'] = this.extract_labels.getValue();
 
         deluge.client.simpleextractor.set_config(config);
     },
@@ -90,6 +108,7 @@ Deluge.ux.preferences.SimpleExtractorPage = Ext.extend(Ext.Panel, {
                 this.extract_path.setValue(config['extract_path']);
                 this.use_name_folder.setValue(config['use_name_folder']);
                 this.in_place_extraction.setValue(config['in_place_extraction']);
+                this.extract_labels.setValue(config['extract_labels']);
             },
             scope: this
         });
