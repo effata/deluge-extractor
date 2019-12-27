@@ -192,9 +192,10 @@ class Core(CorePluginBase):
 
                 # Override destination if in_place_extraction is set
                 if self.config["in_place_extraction"]:
+                    name = tid_status["name"]
                     save_path = tid_status["download_location"]
                     dest = os.path.dirname(fpath)
-                    log.info("Save path is %s, dest is %s, fpath is %s", save_path, dest, fpath)
+                    log.info("Save path is %s, Name is %s, dest is %s, fpath is %s", save_path, name, dest, fpath)
 
                 # Create the destination folder if it doesn't exist
                 if not os.path.exists(dest):
