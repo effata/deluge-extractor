@@ -14,10 +14,10 @@
 from setuptools import find_packages, setup
 
 __plugin_name__ = 'SimpleExtractor'
-__author__ = 'Digitalhigh'
+__author__ = 'Effata'
 __author_email__ = 'donate.to.digitalhigh@gmail.com'
 __version__ = '1.0'
-__url__ = 'github.com/d8ahazard/deluge-extractor'
+__url__ = 'github.com/effata/deluge-extractor'
 __license__ = 'GPLv3'
 __description__ = 'Extract files upon torrent completion'
 __long_description__ = """
